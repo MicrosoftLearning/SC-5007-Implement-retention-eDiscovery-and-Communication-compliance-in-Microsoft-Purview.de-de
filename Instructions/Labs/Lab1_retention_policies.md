@@ -26,15 +26,11 @@ Ihre Aufgabe ist es, Aufbewahrungsrichtlinien zu erstellen und zu verwalten, die
 Hier erstellen Sie eine Aufbewahrungsrichtlinie, die für die gesamte Organisation gilt.
 
 1. Navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an.
-1. Auf dem Bildschirm erscheint eine Meldung über das neue Microsoft Purview-Portal. Wählen Sie die Option, um den Bedingungen für die Veröffentlichung des Datenflusses und der Datenschutzerklärung zuzustimmen, und wählen Sie dann **Jetzt testen** aus.
+1. Auf dem Bildschirm erscheint eine Meldung über das neue Microsoft Purview-Portal. Wählen Sie die Option, um den Bedingungen für die Veröffentlichung des Datenflusses und der Datenschutzerklärung zuzustimmen, und wählen Sie dann **Erste Schritte** aus.
 
     >![Screenshot des Bildschirms „Willkommen im neuen Microsoft Purview-Portal“.](./Media/welcome-purview-portal.png)
 
-1. Wählen Sie **Alle Lösungen anzeigen** aus.
-1. Wählen Sie unter **Data Governance** die Karte **Datenlebenszyklusverwaltung** aus.
-
-    >![Screenshot der Karte „Datenlebenszyklusverwaltung“ im neuen Microsoft Purview-Portal.](./Media/data-lifecycle-management-card.png)
-
+1. Wählen Sie **Lösungen für** > ** das Datenlebenszyklus-Management**.
 1. Erweitern Sie **Richtlinien** und wählen Sie dann **Aufbewahrungsrichtlinien** aus dem linken Navigationsbereich aus.
 1. Wählen Sie **+ Neue Aufbewahrungsrichtlinie** aus.
 1. Geben Sie auf der Seite **Ihre Mitglieder-Aufbewahrungsrichtlinie benennen** den Namen und die Beschreibung ein:
@@ -43,7 +39,7 @@ Hier erstellen Sie eine Aufbewahrungsrichtlinie, die für die gesamte Organisati
    - **Beschreibung:** `All locations except for teams`
 
 1. Wählen Sie **Weiter** aus.
-1. Wählen Sie auf der **Seite „Richtlinienbereich“** **Weiter** aus.
+1. Wählen Sie auf der Seite **Richtlinienbereich** **Weiter** aus.
 1. Wählen Sie auf der Seite **Den Typ der zu erstellenden Aufbewahrungsrichtlinie auswählen** die Option **Statisch** und wählen Sie dann **Weiter**.
 1. Auf der Seite **Auswählen, wo diese Richtlinie angewendet werden soll**, aktivieren Sie:
 
@@ -63,8 +59,6 @@ Hier erstellen Sie eine Aufbewahrungsrichtlinie, die für die gesamte Organisati
 1. Wählen Sie **Weiter** aus.
 1. Auf der Seite **Überprüfen und beenden** wählen Sie **Absenden**.
 1. Sobald Ihre Richtlinie erstellt ist, wählen Sie **Fertig**.
-
-Sie haben erfolgreich eine Aufbewahrungsrichtlinie für verschiedene Speicherorte erstellt. Diese Richtlinie behält Elemente für drei Jahre ab dem Datum der letzten Änderung bei.
 
 Sie haben erfolgreich eine unternehmensweite Aufbewahrungsrichtlinie erstellt, die Elemente drei Jahre ab dem Datum der letzten Änderung aufbewahrt.
 
@@ -156,8 +150,7 @@ Sie haben Aufbewahrungsrichtlinien erfolgreich über PowerShell mit einem Aufbew
 Hier erstellen Sie eine Aufbewahrungsrichtlinie mit anpassungsfähigem Umfang, die auf bestimmte Abteilungen wie Recht und Einzelhandel abzielt.
 
 1. Navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an.
-1. Wählen Sie **Alle Lösungen anzeigen** aus.
-1. Wählen Sie unter **Core** die Karte **Einstellungen**.
+1. Klicken Sie in der Navigationsleiste auf der linken Seite auf **Einstellungen**.
 1. Erweitern Sie **Rollen und Bereiche**, und wählen Sie dann **adaptive Bereiche** aus.
 1. Auf der Seite **Adaptive Bereiche** wählen Sie **+ Bereich erstellen**.
 1. Geben Sie auf der Seite **Adaptiven Richtlinienbereich benennen** Folgendes ein:
@@ -174,19 +167,18 @@ Hier erstellen Sie eine Aufbewahrungsrichtlinie mit anpassungsfähigem Umfang, d
    - **Operator**: Is equal to (gleichgestellt mit)
    - **Wert**: `Legal`
 
-1. Fügen Sie ein zweites Attribut hinzu, indem Sie die Schaltfläche **+Attribut hinzufügen** mit den folgenden Werten auswählen:
+1. Fügen Sie ein zweites Attribut hinzu, indem Sie die Schaltfläche **+ Attribut hinzufügen** mit den Werten auswählen:
 
    - **Abfrageoperator**: Or
    - **Attribut**: Abteilung
    - **Operator**: Is equal to (gleichgestellt mit)
-   - **Wert**: Einzelhandel
+   - **Wert**: `Retail`
 
     >![Screenshot der Abfrage zum Definieren von Benutzerwerten.](./Media/query-to-define-users.png)
 
 1. Wählen Sie **Weiter** und dann **Absenden** auf der Seite **Prüfen und fertigstellen**.
 1. Sobald Ihr Bereich erstellt wurde, wählen Sie **Fertig** aus, um zur Seite **Adaptive Bereiche** zurückzukehren.
-1. Wählen Sie **Startseite** aus dem linken Navigationsbereich, um zurück zur Hauptseite des Microsoft Purview-Portals zu navigieren.
-1. Wählen Sie **Alle Lösungen anzeigen** und dann **Datenlebenszyklusverwaltung** unter **Data Governance**.
+1. Wählen Sie **Lösungen für** > ** das Datenlebenszyklus-Management**.
 1. Erweitern Sie **Richtlinien** und wählen Sie dann **Aufbewahrungsrichtlinien** aus.
 1. Auf der Seite **Aufbewahrungsrichtlinien** wählen Sie **+ Neue Aufbewahrungsrichtlinie**.
 1. Auf der Seite **Adaptiven Richtlinienbereich benennen**, geben Sie Folgendes ein:
@@ -198,7 +190,12 @@ Hier erstellen Sie eine Aufbewahrungsrichtlinie mit anpassungsfähigem Umfang, d
 1. Wählen Sie auf der Seite **Richtlinienbereich** **Weiter** aus.
 1. Wählen Sie auf der Seite **Den Typ der zu erstellenden Aufbewahrungsrichtlinie auswählen** die Option **Adaptiv** und wählen Sie dann **Weiter**.
 1. Wählen Sie auf der Seite **Adaptive Richtlinienbereiche und Standorte auswählen** die Option **+ Bereiche hinzufügen** aus und wählen Sie den Umfang der **Aufbewahrung rechtlicher Dokumente** aus.
-1. Vergewissern Sie sich unter **Orte auswählen, auf die die Richtlinie angewendet werden soll**, dass **Exchange-Postfächer** und **OneDrive-Konten** aktiviert sind, und wählen Sie dann **Weiter**.
+1. Unter **Speicherorte auswählen, auf die die Richtlinie angewendet werden soll** aktivieren Sie:
+
+   - Exchange-Postfächer
+   - OneDrive Konten
+
+1. Wählen Sie **Weiter** aus.
 1. Auf der Seite **Inhalt aufbewahren, löschen oder beides** wollen, geben Sie Folgendes ein:
 
    - **Elemente für einen bestimmten Zeitraum aufbewahren**: 5 Jahre
