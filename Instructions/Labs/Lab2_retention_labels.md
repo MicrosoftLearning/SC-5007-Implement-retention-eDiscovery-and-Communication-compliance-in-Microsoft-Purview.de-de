@@ -25,8 +25,7 @@ Ihre Aufgabe ist es, Aufbewahrungsbezeichnungen zu erstellen und zu verwalten, d
 In dieser Aufgabe erstellen Sie Aufbewahrungsbezeichnungen, die Dokumenten und E-Mails zugewiesen werden können.
 
 1. Navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an.
-1. Wählen Sie **Alle Lösungen anzeigen** aus.
-1. Wählen Sie unter **Risiko & Compliance** die Karte **Datensatzverwaltung**.
+1. Wählen Sie **Lösungen** > **Datensatzverwaltung**.
 1. Wählen Sie im linken Navigationsbereich **Ablageplan**.
 1. Wählen Sie auf der Seite **Ablageplan** die Option **+ Bezeichnung erstellen**.
 1. Auf der Seite **Aufbewahrungsbezeichnung benennen**, geben Sie Folgendes ein:
@@ -48,7 +47,7 @@ In dieser Aufgabe erstellen Sie Aufbewahrungsbezeichnungen, die Dokumenten und E
 1. Wählen Sie auf der Seite **Prüfen und beenden** die Option **Bezeichnung erstellen** aus.
 1. Wählen Sie auf der Seite **Ihre Aufbewahrungsbezeichnung ist erstellt** die Option **Nichts tun** und dann **Fertig**. Die Bezeichnung wird später in der Übung veröffentlicht.
 1. Zurück auf der Seite **Ablageplan** wählen Sie **+ Bezeichnung erstellen** aus, um eine weitere Aufbewahrungsbezeichnung zu erstellen.
-1. Auf der Seite **Aufbewahrungsbezeichnung benennen**, geben Sie Folgendes ein:
+1. Geben Sie auf der Seite **Aufbewahrungsbezeichnung benennen** Folgendes ein:
 
     - **Name**: `HR Records`
     - **Beschreibung für Benutzende**: `This label is auto-applied to HR records with a retention period of five years.`
@@ -73,9 +72,6 @@ Sie haben Aufbewahrungsbezeichnungen für Finanzdatensätze mit einem siebenjäh
 Im Anschluss an Aufgabe 1 veröffentlichen Sie nun die Aufbewahrungsbezeichnungen, sodass sie für die Benutzenden zur Anwendung auf Dokumente in Exchange-E-Mails und SharePoint-Dokumenten verfügbar sind.
 
 1. Sie sollten immer noch auf der Seite **Ablageplan** im Microsoft Purview-Portal sein.
-
-   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal `https://purview.microsoft.com` und melden Sie sich an. Wählen Sie **Alle Lösungen anzeigen**, dann wählen Sie **Datensatzverwaltung** > **Aktenplan**.
-
 1. Aktivieren Sie das Häkchen neben der Aufbewahrungsbezeichnung **Finanzdatensätze** und wählen Sie dann die Schaltfläche **Bezeichnungen veröffentlichen** aus.
 
     >![Screenshot, der zeigt, wo die Aufbewahrungsbezeichnung und die Schaltfläche „Bezeichnungen veröffentlichen“ ausgewählt werden können.](./Media/publish-labels.png)
@@ -91,7 +87,7 @@ Im Anschluss an Aufgabe 1 veröffentlichen Sie nun die Aufbewahrungsbezeichnunge
    - OneDrive Konten
 
 1. Stellen Sie sicher, dass „Microsoft 365 Group-Postfächer und -Websites“ auf **Aus** festgelegt ist, und wählen Sie dann **Weiter**.
-1. Bei der Eingabe **Richtlinienseite benennen** geben Sie Folgendes ein:
+1. Geben Sie auf der Seite **Benennen Sie Ihre Richtlinie** Folgendes ein:
 
    - Name: `Financial Records Retention Label`
    - Description (Beschreibung): `Retention label for financial records with a seven-year retention period.`
@@ -105,9 +101,9 @@ Sie haben die Aufbewahrungsbezeichnung für Finanzdatensätze erfolgreich veröf
 
 Nach Aufgabe 1 wenden Sie jetzt die Aufbewahrungsbezeichnung für HR-Datensätze automatisch an, sodass Informationen aufbewahrt werden.
 
-1. Sie sollten sich immer noch in der **Datensatzverwaltung** im Microsoft Purview-Portal befinden. 
+1. Sie sollten sich immer noch in der **Datensatzverwaltung** im Microsoft Purview-Portal befinden.
 
-   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an. Wählen Sie **Alle Lösungen anzeigen**, dann wählen Sie **Datensatzverwaltung**.
+   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an. Wählen Sie **Lösungen** > **Datensatzverwaltung**.
 
 1. Erweitern Sie im linken Navigationsbereich **Richtlinien** und wählen Sie dann **Bezeichnungsrichtlinien**.
 1. Wählen Sie **Bezeichnung automatisch zuweisen**, um die Konfiguration der **Richtlinie zur automatischen Bezeichnung erstellen** zu starten.

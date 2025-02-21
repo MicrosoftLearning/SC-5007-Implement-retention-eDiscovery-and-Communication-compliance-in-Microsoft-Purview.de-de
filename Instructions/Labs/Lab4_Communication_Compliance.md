@@ -22,17 +22,16 @@ Mandanten dürfen nicht in ein kostenpflichtiges Abonnement konvertiert werden. 
 In dieser Aufgabe erstellen Sie eine Richtlinie mithilfe einer vordefinierten Vorlage, um allgemeine Complianceszenarien schnell zu beheben.
 
 1. Navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an.
-1. Wählen Sie **Alle Lösungen anzeigen** aus.
-1. Wählen Sie unter **Risiko & Compliance** die Karte **Kommunikationscompliance**.
+1. Wählen Sie **Lösungen** > **Kommunikationscompliance** aus.
 1. Wählen Sie im linken Navigationsbereich die Option **Richtlinien** aus.
 1. Wählen Sie **Richtlinie erstellen** und sehen Sie sich die verfügbaren Richtlinienvorlagen an:
 
-   - **Copilot-Interaktionen**: Überwacht alle Interaktionen mit Copilot für Microsoft 365.
+   - **Microsoft Copilot-Interaktionen**: Überwacht alle Interaktionen mit Copilot für Microsoft 365.
    - **Unangemessene Inhalte**: Erkennt Hass, Gewalt, sexuelle Inhalte und Selbstbeschädigung in Microsoft Teams.
    - **Unangemessener Text**: Kennzeichnet Bedrohungen, Diskriminierungen und Belästigungen in Exchange Online, Microsoft Teams und Viva Engage.
    - **Unangemessene Bilder**: Identifiziert nicht jugendfreie und rassistische Bilder in Exchange Online und Microsoft Teams.
    - **Sensible Informationen**: Überwacht sensible Informationen in Exchange Online, Microsoft Teams und Viva Engage mit einem geringeren Überprüfungsanteil.
-   - **Einhaltung gesetzlicher Vorschriften**: Gewährleistet die Einhaltung von Finanzvorschriften in Exchange Online, Microsoft Teams und Viva Engage.
+   - **Einhaltung von Finanzvorschriften**: Gewährleistet die Einhaltung von Finanzvorschriften in Exchange Online, Microsoft Teams und Viva Engage.
    - **Interessenkonflikt**: Erkennt potenzielle Interessenkonflikte innerhalb von Exchange Online, Microsoft Teams und Viva Engage.
 
 1. Wählen Sie die Richtlinienvorlage für **Unangemessenen Text erkennen** aus.
@@ -46,9 +45,6 @@ Sie haben erfolgreich eine Richtlinie zur Kommunikationscompliance mithilfe der 
 Hier ändern Sie eine Richtlinienvorlage so, dass sie auf bestimmte Organisationsanforderungen zugeschnitten wird.
 
 1. Sie sollten sich immer noch auf der Seite **Richtlinien** innerhalb von **Kommunikationscompliance** im Microsoft Purview Portal befinden.
-
-   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal `https://purview.microsoft.com` und melden Sie sich an. Wählen Sie die Karte **Alle Lösungen anzeigen** > **Kommunikationscompliance** unter **Risiko & Compliance**.
-
 1. Wählen Sie **Richtlinie erstellen** > **Unangemessene Bilder erkennen**.
 1. Wählen Sie auf der Flyout-Seite **Kommunikation auf unangemessene Bilder erkennen** auf der rechten Seite **Richtlinie anpassen** unten auf der Flyout-Seite.
 1. Wählen Sie **Richtlinie anpassen** unten auf der Flyout-Seite.
@@ -71,9 +67,6 @@ Sie haben erfolgreich eine Richtlinie zur Kommunikationscompliance mithilfe der 
 In dieser Aufgabe erstellen Sie eine Richtlinie zur Kommunikationscompliance von Grund auf neu, um eindeutige Complianceanforderungen zu erfüllen.
 
 1. Sie sollten sich immer noch auf der Seite **Richtlinien** innerhalb von **Kommunikationscompliance** im Microsoft Purview Portal befinden.
-
-   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal `https://purview.microsoft.com` und melden Sie sich an. Wählen Sie die Karte **Alle Lösungen anzeigen** > **Kommunikationscompliance** unter **Risiko & Compliance**.
-
 1. Wählen Sie **Richtlinie erstellen** > **Benutzerdefinierte Richtlinie**.
 1. Auf der Seite **Richtlinie benennen und beschreiben**, geben Sie Folgendes ein:
 
@@ -97,8 +90,7 @@ In dieser Aufgabe erstellen Sie eine Richtlinie zur Kommunikationscompliance von
 
 1. Wählen Sie **Weiter** aus.
 1. Lassen Sie auf der Seite **Bedingungen auswählen und Prozentsatz überprüfen** die Standardeinstellungen für **Kommunikationsrichtung** ausgewählt.
-1. Aktivieren Sie unter **Bedingungen** die Option zur Verwendung des **neuen Bedingungsgenerators (Vorschau)**.
-1. Wählen Sie **+ Bedingung hinzufügen** > **Inhalt entspricht trainierbarem Klassifizierer**.
+1. Wählen Sie unter **Bedingungen** die Option **+ Bedingung hinzufügen** > **Inhalt entspricht trainierbarem Klassifizierer**.
 1. Wählen Sie unter **Inhalt entspricht trainierbaren Klassifizierer** die Option **Hinzufügen** > **Trainierbare Klassifizierer**.
 1. Wählen Sie auf der Flyout-Seite **Trainierbare Klassifizierer** auf der rechten Seite Klassifizierer für **Regulatorische Absprachen**, **Aktienmanipulation**, **Unbefugte Offenlegung** und **Unternehmenssabotage**.
 1. Wählen Sie **Hinzufügen** unten auf der Aufklappseite **Trainierbare Klassifizierer** auf der rechten Seite.
