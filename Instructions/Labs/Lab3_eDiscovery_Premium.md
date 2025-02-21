@@ -30,20 +30,19 @@ Ihre Aufgabe besteht darin, eDiscovery-Fälle zu erstellen und zu verwalten, die
 Zum Exportieren von Dateien benötigen Sie bestimmte Berechtigungen aufgrund des direkten Zugriffs, den diese Option für Benutzerdateien gewährt.
 
 1. Navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an.
-1. Wählen Sie die Karte **Einstellungen**.
-
-   Wenn die Karte **Einstellungen** nicht angezeigt wird, wählen Sie **Alle Lösungen anzeigen** aus, und suchen Sie im Abschnitt **Core** nach **Einstellungen**.
-
+1. Wählen Sie **Einstellungen** aus dem linken Navigationsbereich.
 1. Erweitern Sie im linken Navigationsbereich **Rollen und Bereiche** und wählen Sie **Rollengruppen**.
 1. Wählen Sie auf der Seite **Rollengruppen für Microsoft Purview-Lösungen** die Option **eDiscovery-Manager**.
 1. Wählen Sie auf der Fly-out-Seite **eDiscovery-Manager** auf der rechten Seite **Bearbeiten**.
 1. Wählen Sie auf der Seite **eDiscovery-Manager verwalten** die Option **Benutzer auswählen**.
-1. Wählen Sie auf der Fly-out-Seite **Benutzer auswählen** auf der rechten Seite den Benutzenden aus, mit dem Sie diese interaktive Übung durchführen möchten, und wählen Sie dann **Auswählen**.
+1. Wählen Sie auf der Flyout-Seite **Benutzende auswählen** auf der rechten Seite die benutzende Person aus, mit der Sie in den nächsten Schritten die eDiscovery-Untersuchung durchführen wollen, und wählen Sie dann **Auswählen**.
+
+    >**Hinweis**: Stellen Sie sicher, dass Sie die benutzende Person auswählen, die die Daten überprüfen und die Suchergebnisse exportieren soll.
+
 1. Zurück auf der Seite **eDiscovery-Manager verwalten** wählen Sie **Weiter** aus.
 1. Wählen Sie auf der Seite **eDiscovery-Administrator verwalten** die Option **Benutzer auswählen** aus.
 1. Wählen Sie auf der Seite **Rollengruppe überprüfen und fertigstellen** die Option **Speichern** aus, um Ihre Benutzenden zur eDiscovery-Manager-Rollengruppe hinzuzufügen.
 1. Wenn Sie die Benutzenden erfolgreich hinzugefügt haben, wählen Sie **Fertig** auf der Seite **Sie haben die Rollengruppe erfolgreich aktualisiert**.
-1. Wählen Sie **Startseite** aus, um zurück zur Startseite des Microsoft Purview-Portals zu navigieren.
 
 Sie haben die eDiscovery-Manager-Berechtigung erfolgreich erteilt.
 
@@ -51,19 +50,17 @@ Sie haben die eDiscovery-Manager-Berechtigung erfolgreich erteilt.
 
 Nachdem Sie nun über die erforderlichen Berechtigungen verfügen, können Sie einen neuen eDiscovery-Fall erstellen, um ihre Untersuchung zu starten.
 
-1. Sie sollten sich auf der Startseite des Microsoft Purview-Portals befinden.
+1. Wählen Sie in Microsoft Purview **Lösungen** > **eDiscovery**.
 
-   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an.
+   Dies bringt Sie direkt zur Erfahrung **Klassisch** von **eDiscovery (Premium)**.
 
-1. Wählen Sie **Alle Lösungen anzeigen** aus.
-1. Wählen Sie unter **Risikomanagement und Compliance** die Karte **eDiscovery** aus.
-1. Erweitern Sie im linken Navigationsbereich **Premium-Fälle** und wählen Sie dann **Fälle** aus.
-1. Wählen Sie auf der Seite **eDiscovery (Premium)** die Option **+Fall erstellen** erstellen aus.
+1. Wählen Sie auf der Seite **eDiscovery (Premium)** die Registerkarte **Fälle** und dann **+ Einen Fall erstellen**.
 1. Geben Sie auf der Flyout-Seite **Fall benennen** rechts Folgendes ein:
 
    - **Name**: `Legal Investigation 2024`
    - **Beschreibung:** `eDiscovery case for the 2024 legal investigation involving relevant emails and documents.`
 
+1. Wählen Sie **Weiter** aus.
 1. Fügen Sie auf der Seite **Teammitglieder hinzufügen und Einstellungen festlegen** die Benutzenden hinzu, die die Untersuchung durchführen werden, und wählen Sie **Weiter** aus.
 1. Wählen Sie auf der Seite **Fall überprüfen** **Absenden** und dann **Fertig** aus.
 
@@ -74,9 +71,6 @@ Sie haben erfolgreich einen neuen eDiscovery-Fall mit dem Namen _Rechtsuntersuch
 Nachdem Ihr Fall erstellt wurde, müssen Sie Verwahrende hinzufügen. Verwahrende sind Personen, die möglicherweise über relevante Informationen für die Untersuchung verfügen.
 
 1. Nachdem Sie den Fall in der vorherigen Aufgabe erstellt haben, sollten Sie sich auf der Registerkarte **Übersicht** des Falles **Rechtsuntersuchung 2024** befinden.
-
-   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an. Wählen Sie die Karte **eDiscovery** unter dem Abschnitt **Risiko und Compliance**. Wählen Sie **Premium-Fälle** > **Fälle** und wählen Sie den neu erstellten Fall **Rechtsuntersuchung 2024** aus.
-
 1. Wählen Sie in der oberen Navigationsleiste die Registerkarte **Datenquellen** und dann **Datenquelle hinzufügen** > **Neuen Verwahrer hinzufügen** aus.
 1. Fügen Sie auf der Fly-out-Seite **Neuer Verwahrer** unter **Verwahrer auswählen** Verwahrende zu Ihrem Fall hinzu und wählen Sie dann **Weiter**.
 1. Vergewissern Sie sich auf der Seite **Aufbewahrungsbereich**, dass die im vorherigen Schritt hinzugefügten Verwahrende ausgewählt sind, um sie auf die Warteschleife zu setzen.
@@ -89,9 +83,6 @@ Sie haben dem Fall _Rechtsuntersuchung 2024_ erfolgreich Verwahrende hinzugefüg
 Nachdem Verwahrende hinzugefügt wurden, können Sie jetzt eine Sammlungsschätzung ausführen, um einen Überblick über das Datenvolumen und die Relevanz zu erhalten.
 
 1. Nachdem Sie dem Fall in der vorherigen Aufgabe Verwahrende hinzugefügt haben, sollten Sie sich immer noch auf der Registerkarte **Datenquellen** des Falls **Rechtsuntersuchung 2024** befinden.  
-
-   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an. Wählen Sie die Karte **eDiscovery** unter dem Abschnitt **Risiko und Compliance**. Wählen Sie **Premium-Fälle** > **Fälle** und wählen Sie den neu erstellten Fall **Rechtsuntersuchung 2024** aus.
-
 1. Wählen Sie die Registerkarte **Sammlungen** in der oberen Navigation und wählen Sie dann **+ Neue Sammlung**.
 1. In der Konfiguration **Neue Sammlung** geben Sie der Sammlung einen **Namen und eine Beschreibung**. Geben Sie Folgendes ein:
 
@@ -112,6 +103,10 @@ Nachdem Verwahrende hinzugefügt wurden, können Sie jetzt eine Sammlungsschätz
 1. Auf der Seite **Suchanfrage definieren** verwenden Sie die Suchfunktion, um eine Suche nach Inhalten zu erstellen, die für Ihren Fall relevant sind:
 
    - Verwenden Sie den Operator **AND**, um nach **Schlüsselwörtern** zu suchen, die **Equal** (gleich) mit `legal` sind.
+
+    >**Hinweis**: Möglicherweise müssen Sie die Option **Filter auswählen** nach dem Erstellen der Suchanfrage löschen, um Schlüsselwörter zu finden, die **legal** entsprechen. Wenn diese Option vorhanden ist, verhindert sie, dass Sie die Untergruppe im nächsten Schritt hinzufügen können.
+    >![Screenshot zeigt den Abfrage-Generator in eDiscovery Premium.](./Media/ediscovery-subgroup-bug.png)
+
    - Wählen Sie **Eine Untergruppe hinzufügen**.
    - Verwenden Sie den Operator **OR**, um nach **Schlüsselwörtern** zu suchen, die **Equal** (gleich) mit `contract` sind.
 
@@ -141,9 +136,6 @@ Sie haben erfolgreich eine Sammlung mit dem Namen _Rechtliche Datensammlung_ ers
 Sobald die Sammlung zufriedenstellend ist, führen Sie einen Commit an einen Prüfdateisatz zur detaillierten Analyse durch.
 
 1. Nachdem Sie in der vorherigen Aufgabe die Sammlungsschätzung erstellt haben, sollten Sie sich noch auf der Registerkarte **Sammlungen** des Falls **Rechtsuntersuchung 2024** befinden.  
-
-   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an. Wählen Sie die Karte **eDiscovery** unter dem Abschnitt **Risiko und Compliance**. Wählen Sie die Registerkarte **Premium-Fälle** > **Fälle** > **Rechtsuntersuchung 2024** > **Kollektionen**.
-
 1. Wählen Sie die Sammlung **Rechtliche Datensammlung**.
 1. Wählen Sie auf der Flyout-Seite **Rechtliche Datensammlung** auf der rechten Seite **Sammlung übertragen** (Commit ausführen).
 1. Vergewissern Sie sich auf der Seite **Elemente an einen Prüfdateisatz übertragen**, dass die Option **Zu neuem Prüfdateisatz hinzufügen** ausgewählt ist, und geben Sie ihm einen Namen `Legal Case Review`.
@@ -154,9 +146,6 @@ Sie haben die Sammlung erfolgreich an einen Prüfdateisatz übertragen.
 ## Aufgabe 6: Erkunden des Prüfdateisatzes
 
 1. Nachdem Sie die Sammlung in der vorherigen Aufgabe an einen Prüfdateisatz übertragen haben, sollten Sie sich immer noch auf der Registerkarte **Sammlungen** des Falls **Rechtsuntersuchung 2024** befinden.
-
-   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an. Wählen Sie die Karte **eDiscovery** unter dem Abschnitt **Risiko und Compliance**. Wählen Sie **Premium-Fälle** > **Fälle** > **Rechtsuntersuchung 2024** aus.
-
 1. Wählen Sie die Registerkarte **Prüfdatensätze** in der oberen Navigation aus und wählen Sie dann den neu erstellten Prüfdatensatz **Rechtsfallprüfung** aus.
 1. Wählen Sie auf der Flyout-Seite **Rechtsfallprüfung** rechts unten auf der Seite **Prüfdatensatz öffnen** aus.
 1. Erfahren Sie, was Sie mit Elementen in Ihrem Prüfdateisatz tun können:
@@ -180,9 +169,6 @@ Sie haben Ihren Prüfdateisatz erfolgreich geöffnet und überprüft.
 Um Ihre Arbeit zu speichern und weitere Analysen zu ermöglichen, exportieren Sie die Suchergebnisse.
 
 1. Sie sollten sich immer noch im Prüfdateisatz **Rechtsfallprüfung** in eDiscovery (Premium) befinden.
-
-   Falls nicht, navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an. Wählen Sie die Karte **eDiscovery** unter dem Abschnitt **Risiko und Compliance**. Wählen Sie die Registerkarte **Premium-Fälle** > **Fälle** > **Rechtsuntersuchung 2024** > **Prüfdatensatz** > **Rechtsfallprüfung** aus.
-
 1. Aktivieren Sie das Kontrollkästchen neben den Elementen, die Sie zur weiteren Analyse exportieren möchten.
 1. Wählen Sie das Dropdown-Menü für **Aktionen** > **Exportieren** aus.
 
