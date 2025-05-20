@@ -145,64 +145,68 @@ In dieser Aufgabe verwenden Sie PowerShell zum Erstellen und Verwalten von Aufbe
 
 Sie haben Aufbewahrungsrichtlinien erfolgreich über PowerShell mit einem Aufbewahrungszeitraum von drei Jahren erstellt.
 
-## Aufgabe 4 – Erstellen einer Aufbewahrungsrichtlinie mit anpassungsfähigem Umfang
+<!--- Commenting out until adaptive scope issue is resolved
 
-Hier erstellen Sie eine Aufbewahrungsrichtlinie mit anpassungsfähigem Umfang, die auf bestimmte Abteilungen wie Recht und Einzelhandel abzielt.
+## Task 4 – Create retention policy with adaptive scope
 
-1. Navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an.
-1. Klicken Sie in der Navigationsleiste auf der linken Seite auf **Einstellungen**.
-1. Erweitern Sie **Rollen und Bereiche**, und wählen Sie dann **adaptive Bereiche** aus.
-1. Auf der Seite **Adaptive Bereiche** wählen Sie **+ Bereich erstellen**.
-1. Geben Sie auf der Seite **Adaptiven Richtlinienbereich benennen** Folgendes ein:
+Here, you will create a retention policy with adaptive scope targeting specific departments like Legal and Retail.
+
+1. In Microsoft Edge, navigate to the Microsoft Purview portal, `https://purview.microsoft.com`, and log in.
+1. Select **Settings** from the left navigation bar.
+1. Expand **Roles and scopes** then select **Adaptive scopes**.
+1. On the **Adaptive scopes** page select **+ Create scope**.
+1. On the **Name your adaptive policy scope page**, enter:
 
    - **Name**: `Legal Documents Retention`
-   - **Beschreibung:** `Retention for legal related documents`
+   - **Description**: `Retention for legal related documents`
 
-1. Wählen Sie **Weiter** aus.
-1. Wählen Sie auf der Seite **Admineinheiten zuweisen** die Option **Weiter**.
-1. Auf der Seite **Welchen Bereichstyp möchten Sie erstellen?** wählen Sie **Benutzer** und dann **Weiter**.
-1. Auf der Seite **Abfrage zur Definition der Benutzer erstellen**, wählen Sie unter **Benutzerattribute** Folgendes:
+1. Select **Next**.
+1. On the **Assign admin unit page**, select **Next**.
+1. On the **What type of scope do you want to create?** page, select **Users** and then **Next**.
+1. On the **Create the query to define users** page, under **User attributes**, select:
 
-   - **Attribut**: Abteilung
-   - **Operator**: Is equal to (gleichgestellt mit)
-   - **Wert**: `Legal`
+   - **Attribute**: Department
+   - **Operator**: is equal to
+   - **Value**: `Legal`
 
-1. Fügen Sie ein zweites Attribut hinzu, indem Sie die Schaltfläche **+ Attribut hinzufügen** mit den Werten auswählen:
+1. Add a second attribute by selecting the **+ Add attribute** button with values:
 
-   - **Abfrageoperator**: Or
-   - **Attribut**: Abteilung
-   - **Operator**: Is equal to (gleichgestellt mit)
-   - **Wert**: `Retail`
+   - **Query operator**: Or
+   - **Attribute**: Department
+   - **Operator**: is equal to
+   - **Value**: `Retail`
 
-    >![Screenshot der Abfrage zum Definieren von Benutzerwerten.](./Media/query-to-define-users.png)
+    >![Screenshot showing the query to define users values.](./Media/query-to-define-users.png)
 
-1. Wählen Sie **Weiter** und dann **Absenden** auf der Seite **Prüfen und fertigstellen**.
-1. Sobald Ihr Bereich erstellt wurde, wählen Sie **Fertig** aus, um zur Seite **Adaptive Bereiche** zurückzukehren.
-1. Wählen Sie **Lösungen für** > ** das Datenlebenszyklus-Management**.
-1. Erweitern Sie **Richtlinien** und wählen Sie dann **Aufbewahrungsrichtlinien** aus.
-1. Auf der Seite **Aufbewahrungsrichtlinien** wählen Sie **+ Neue Aufbewahrungsrichtlinie**.
-1. Auf der Seite **Adaptiven Richtlinienbereich benennen**, geben Sie Folgendes ein:
+1. Select **Next** and then **Submit** on the **Review and finish** page.
+1. Once your scope has been created select **Done** to get back to the **Adaptive scopes** page.
+1. Select **Solutions** > **Data Lifecycle Management**.
+1. Expand **Policies** then select **Retention policies**.
+1. On the **Retention policies** page select **+ New retention policy**.
+1. On the **Name your retention policy page**, enter:
 
    - **Name**: `Legal Data Retention`
-   - **Beschreibung:** `Retention of all documents within the legal and retail departments.`
+   - **Description**: `Retention of all documents within the legal and retail departments.`
 
-1. Wählen Sie **Weiter** aus.
-1. Wählen Sie auf der Seite **Richtlinienbereich** **Weiter** aus.
-1. Wählen Sie auf der Seite **Den Typ der zu erstellenden Aufbewahrungsrichtlinie auswählen** die Option **Adaptiv** und wählen Sie dann **Weiter**.
-1. Wählen Sie auf der Seite **Adaptive Richtlinienbereiche und Standorte auswählen** die Option **+ Bereiche hinzufügen** aus und wählen Sie den Umfang der **Aufbewahrung rechtlicher Dokumente** aus.
-1. Unter **Speicherorte auswählen, auf die die Richtlinie angewendet werden soll** aktivieren Sie:
+1. Select **Next**.
+1. On the **Policy Scope** page, select **Next**.
+1. On the **Choose the type of retention policy to create** page, select **Adaptive** and then **Next**.
+1. On the **Choose adaptive policy scopes and locations** page, select **+ Add scopes** and choose the **Legal Documents Retention** scope.
+1. Under **Choose locations to apply the policy** enable:
 
-   - Exchange-Postfächer
-   - OneDrive Konten
+   - Exchange mailboxes
+   - OneDrive accounts
 
-1. Wählen Sie **Weiter** aus.
-1. Auf der Seite **Inhalt aufbewahren, löschen oder beides** wollen, geben Sie Folgendes ein:
+1. Select **Next**.
+1. On the **Decide if you want to retain content, delete it, or both** page, enter:
 
-   - **Elemente für einen bestimmten Zeitraum aufbewahren**: 5 Jahre
-   - **Beginn des Aufbewahrungszeitraums basierend auf**: Zeitpunkt der Elementerstellung
-   - **Am Ende des Aufbewahrungszeitraums**: Nichts tun
+   - **Retain items for a specific period**: 5 years
+   - **Start the retention period based on**: When items were created
+   - **At the end of the retention period**: Do nothing
 
-1. Wählen Sie **Weiter** und dann **Absenden** auf dem Bildschirm **Prüfen und fertigstellen**.
-1. Sobald Ihre Richtlinie erstellt ist, wählen Sie **Fertig**.
+1. Select **Next** and then **Submit** on the **Review and finish**.
+1. Once your policy is created, select **Done**.
 
-Sie haben erfolgreich einen adaptiven Bereich auf eine Aufbewahrungsrichtlinie angewendet.
+You have successfully applied an adaptive scope to a retention policy.
+
+--->
