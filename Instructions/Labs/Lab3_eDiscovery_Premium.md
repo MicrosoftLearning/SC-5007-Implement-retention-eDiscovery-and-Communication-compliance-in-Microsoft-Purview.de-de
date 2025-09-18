@@ -1,7 +1,7 @@
 ---
 lab:
-  task: Case investigation with eDiscovery (Premium)
-  exercise: Exercise 3 - Case investigation with eDiscovery (Premium)
+  task: Case investigation with eDiscovery
+  exercise: Exercise 3 - Case investigation with eDiscovery
 ---
 
 ## WWL-Mandanten – Nutzungsbedingungen
@@ -14,183 +14,251 @@ Mandanten dürfen nicht in ein kostenpflichtiges Abonnement konvertiert werden. 
 
 # Übung 3: Qualifikationsaufgaben
 
+Contoso vermutet, dass vertrauliche Zahlungsdaten, einschließlich Kreditkarten- und Kontonummern, falsch behandelt oder offengelegt wurden. Als ermittelnde Person besteht Ihre Aufgabe darin, Microsoft Purview-eDiscovery zu verwenden, um einen Fall zu erstellen, mehrere Datenquellen zu durchsuchen, vertrauliche Inhalte zu identifizieren und Bearbeitungen anzuwenden, bevor die Ergebnisse für Compliance oder die rechtliche Überprüfung erstellt werden.
+
 Ihre Aufgabe besteht darin, eDiscovery-Fälle zu erstellen und zu verwalten, die den Untersuchungskriterien entsprechen:
 
-- **Erstellen eines neuen eDiscovery-Falls**: Richten Sie einen neuen Fall ein, um mit Ihrer Untersuchung zu beginnen.
-- **Hinzufügen von Verwahrenden zum Fall**: Nehmen Sie relevante Personen auf, die möglicherweise über sachdienliche Daten verfügen.
-- **Erstellen und Ausführen einer Sammlungsschätzung**: Analysieren des Datenvolumens und der Relevanz für die Untersuchung.
-- **Überprüfen und Verfeinern der Schätzung der Sammlung**: Stellen Sie sicher, dass die Sammlung Ihren Kriterien entspricht.
-- **Commit der Sammlung auf einen Prüfdateisatz**: Bereiten Sie die Daten für eine detaillierte Analyse vor.
-- **Exportieren der Suchergebnisse**: Speichern Sie die gesammelten Daten für weitere Überprüfungs- und Compliancezwecke.
+- **Erstellen eines neuen eDiscovery-Falls**: Richten Sie einen Fall ein, um die Untersuchung der Zahlungsdaten zu verwalten.
+- **Ausführen einer eDiscovery-Suche**: Durchsuchen Sie alle Datenquellen, um Dateien zu identifizieren, die Zahlungskarten- oder Kontoinformationen enthalten können.
+- **Hinzufügen von Elementen zu einem Prüfdateisatz**: Setzen Sie Ihre Suchergebnisse auf einen Prüfdateisatz für eine umfassendere Analyse.
+- **Kategorisieren von Elementen zur Überprüfung**: Wenden Sie Relevanz- und Bearbeitungstags an, um Dokumente für den Fall zu organisieren.
+- **Anwenden von Bearbeitungen**: Verwenden Sie Anmerkungstools, um vertrauliche Details wie Karten- und Kontonummern zu maskieren.
+- **Exportieren von Ergebnissen**: Exportieren Sie die bearbeiteten und markierten Elemente zusammen mit einem Elementbericht für die Produktion.
 
->**Hinweis**: In diesem Lab wird der Zugriff auf einen M365 E5-Mandanten mit Daten vorausgesetzt, um eine Untersuchung durchzuführen. Sie können diese Übung auch ohne Daten durchführen, aber Sammlungen und Prüfdatensätze werden keine Ergebnisse liefern.
+   > **Hinweis**: In diesem Lab wird der Zugriff auf einen M365 E5-Mandanten mit Daten vorausgesetzt, um eine Untersuchung durchzuführen. Sie können diese Übung auch ohne Daten durchführen, aber Sammlungen und Prüfdatensätze werden keine Ergebnisse liefern.
 
-## Aufgabe 1: Erteilen von Berechtigungen für eDiscovery (Premium)
+## Aufgabe 1: Erteilen von Berechtigungen für eDiscovery
 
 Zum Exportieren von Dateien benötigen Sie bestimmte Berechtigungen aufgrund des direkten Zugriffs, den diese Option für Benutzerdateien gewährt.
 
 1. Navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an.
+
 1. Wählen Sie **Einstellungen** aus dem linken Navigationsbereich.
+
 1. Erweitern Sie im linken Navigationsbereich **Rollen und Bereiche** und wählen Sie **Rollengruppen**.
+
 1. Wählen Sie auf der Seite **Rollengruppen für Microsoft Purview-Lösungen** die Option **eDiscovery-Manager**.
+
 1. Wählen Sie auf der Fly-out-Seite **eDiscovery-Manager** auf der rechten Seite **Bearbeiten**.
+
 1. Wählen Sie auf der Seite **eDiscovery-Manager verwalten** die Option **Benutzer auswählen**.
+
 1. Wählen Sie auf der Flyout-Seite **Benutzende auswählen** auf der rechten Seite die benutzende Person aus, mit der Sie in den nächsten Schritten die eDiscovery-Untersuchung durchführen wollen, und wählen Sie dann **Auswählen**.
 
     >**Hinweis**: Stellen Sie sicher, dass Sie die benutzende Person auswählen, die die Daten überprüfen und die Suchergebnisse exportieren soll.
 
 1. Zurück auf der Seite **eDiscovery-Manager verwalten** wählen Sie **Weiter** aus.
+
 1. Wählen Sie auf der Seite **eDiscovery-Administrator verwalten** die Option **Benutzer auswählen** aus.
+
 1. Wählen Sie auf der Seite **Rollengruppe überprüfen und fertigstellen** die Option **Speichern** aus, um Ihre Benutzenden zur eDiscovery-Manager-Rollengruppe hinzuzufügen.
+
 1. Wenn Sie die Benutzenden erfolgreich hinzugefügt haben, wählen Sie **Fertig** auf der Seite **Sie haben die Rollengruppe erfolgreich aktualisiert**.
 
 Sie haben die eDiscovery-Manager-Berechtigung erfolgreich erteilt.
 
-## Übung 2: Erstellen eines eDiscovery-Falls (Premium)
+## Aufgabe 2: Erstellen eines eDiscovery-Falls
 
-Nachdem Sie nun über die erforderlichen Berechtigungen verfügen, können Sie einen neuen eDiscovery-Fall erstellen, um ihre Untersuchung zu starten.
+Bei dieser Aufgabe erstellen Sie einen neuen eDiscovery-Fall zum Verwalten der Untersuchung der Zahlungsdaten.
 
 1. Wählen Sie in Microsoft Purview **Lösungen** > **eDiscovery**.
 
-   Dies bringt Sie direkt zur Erfahrung **Klassisch** von **eDiscovery (Premium)**.
+1. Wählen Sie auf der Seite **Fälle** die Option **Fall erstellen** aus.
 
-1. Wählen Sie auf der Seite **eDiscovery (Premium)** die Registerkarte **Fälle** und dann **+ Einen Fall erstellen**.
-1. Geben Sie auf der Flyout-Seite **Fall benennen** rechts Folgendes ein:
+1. Geben Sie im Dialogfeld **Neuer Fall** Folgendes ein:
 
-   - **Name**: `Legal Investigation 2024`
-   - **Beschreibung:** `eDiscovery case for the 2024 legal investigation involving relevant emails and documents.`
+   - **Fallname**: `Payment Data Leak Investigation`
+   - **Fallbeschreibung**: `Investigation into potential exposure of payment card and account data at Contoso.`
 
-1. Wählen Sie **Weiter** aus.
-1. Fügen Sie auf der Seite **Teammitglieder hinzufügen und Einstellungen festlegen** die Benutzenden hinzu, die die Untersuchung durchführen werden, und wählen Sie **Weiter** aus.
-1. Wählen Sie auf der Seite **Fall überprüfen** **Absenden** und dann **Fertig** aus.
+1. Klicken Sie auf **Erstellen**.
 
-Sie haben erfolgreich einen neuen eDiscovery-Fall mit dem Namen _Rechtsuntersuchung 2024_ erstellt.
+   Nachdem Ihr Fall erstellt wurde, werden Sie direkt zu Ihrem neuen Fall weitergeleitet.
 
-## Aufgabe 3: Hinzufügen von Verwahrenden zum Fall
+Sie haben einen neuen eDiscovery-Fall namens _Payment Data Leak Investigation_ erfolgreich erstellt.
 
-Nachdem Ihr Fall erstellt wurde, müssen Sie Verwahrende hinzufügen. Verwahrende sind Personen, die möglicherweise über relevante Informationen für die Untersuchung verfügen.
+## Aufgabe 3: Erstellen einer eDiscovery-Suche
 
-1. Nachdem Sie den Fall in der vorherigen Aufgabe erstellt haben, sollten Sie sich auf der Registerkarte **Übersicht** des Falles **Rechtsuntersuchung 2024** befinden.
-1. Wählen Sie in der oberen Navigationsleiste die Registerkarte **Datenquellen** und dann **Datenquelle hinzufügen** > **Neuen Verwahrer hinzufügen** aus.
-1. Fügen Sie auf der Fly-out-Seite **Neuer Verwahrer** unter **Verwahrer auswählen** Verwahrende zu Ihrem Fall hinzu und wählen Sie dann **Weiter**.
-1. Vergewissern Sie sich auf der Seite **Aufbewahrungsbereich**, dass die im vorherigen Schritt hinzugefügten Verwahrende ausgewählt sind, um sie auf die Warteschleife zu setzen.
-1. Wählen Sie auf der Seite **Verwahrende überprüfen** die Option **Senden** und dann **Fertig**, sobald Ihre neuen Verwahrenden erstellt sind.
+Bei dieser Aufgabe erstellen Sie eine Suche, um E-Mails und Dokumente zu finden, die auf vertrauliche Zahlungsdaten verweisen.
 
-Sie haben dem Fall _Rechtsuntersuchung 2024_ erfolgreich Verwahrende hinzugefügt.
+1. Wählen Sie **Erstellen einer Suche** aus.
 
-## Aufgabe 4: Erstellen und Ausführen einer Sammlungsschätzung
+1. Geben Sie im Dialogfeld **Neue Suche** Folgendes ein:
 
-Nachdem Verwahrende hinzugefügt wurden, können Sie jetzt eine Sammlungsschätzung ausführen, um einen Überblick über das Datenvolumen und die Relevanz zu erhalten.
+   - **Namen suchen**: `Payment Data Exposure Search`
+   - **Suchbeschreibung**: `Find emails and documents that reference credit cards, debit cards, or account numbers.`
 
-1. Nachdem Sie dem Fall in der vorherigen Aufgabe Verwahrende hinzugefügt haben, sollten Sie sich immer noch auf der Registerkarte **Datenquellen** des Falls **Rechtsuntersuchung 2024** befinden.  
-1. Wählen Sie die Registerkarte **Sammlungen** in der oberen Navigation und wählen Sie dann **+ Neue Sammlung**.
-1. In der Konfiguration **Neue Sammlung** geben Sie der Sammlung einen **Namen und eine Beschreibung**. Geben Sie Folgendes ein:
+1. Klicken Sie auf **Erstellen**.
 
-   - **Name**: `Legal Data Collection`
-   - **Beschreibung:** `Collecting emails and documents relevant to the 2024 legal investigation.`
+1. Wählen Sie auf der Seite **Suche nach der Gefährdung für Zahlungsdaten** die Option **Quellen hinzufügen** aus.
 
-1. Wählen Sie **Weiter** aus.
-1. Wählen Sie auf der Seite **Verwahrte Datenquellen auswählen** die Option **+ Verwahrer auswählen**.
-1. Fügen Sie auf der Aufklappseite **Verwahrer auswählen** auf der rechten Seite die Verwahrenden hinzu, die in der vorherigen Aufgabe zum Fall hinzugefügt wurden, und wählen Sie dann **Hinzufügen**.
-1. Zurück auf der Seite **Verwahrte Datenquellen auswählen**, wählen Sie **Weiter**.
-1. Zurück auf der Seite **Nicht-verwahrte Datenquellen auswählen**, wählen Sie **Weiter**.
-1. Legen Sie auf der Seite **Zusätzliche Speicherorte** den Status auf **Ein** für diese Speicherorte fest:
+1. **Filtern** Sie Ihre Quellen auf der Seite **Nach Quelle suchen** für **Nur Gruppen**.
 
-   - Exchange-Postfächer
-   - Öffentliche Exchange-Ordner
+1. Wählen Sie **Mandantenweite Quellen hinzufügen** aus, und lassen Sie die Kontrollkästchen für **Alle Personen und Gruppen** und **Alle öffentlichen Ordner** aktiviert.
 
-1. Wählen Sie **Weiter** aus.
-1. Auf der Seite **Suchanfrage definieren** verwenden Sie die Suchfunktion, um eine Suche nach Inhalten zu erstellen, die für Ihren Fall relevant sind:
+1. Wählen Sie **Speichern**.
 
-   - Verwenden Sie den Operator **AND**, um nach **Schlüsselwörtern** zu suchen, die **Equal** (gleich) mit `legal` sind.
+1. Fügen Sie wieder auf der Seite **Suche nach der Gefährdung für Zahlungsdaten** im **Bedingungs-Generator** Bedingungen hinzu:
 
-    >**Hinweis**: Möglicherweise müssen Sie die Option **Filter auswählen** nach dem Erstellen der Suchanfrage löschen, um Schlüsselwörter zu finden, die **legal** entsprechen. Wenn diese Option vorhanden ist, verhindert sie, dass Sie die Untergruppe im nächsten Schritt hinzufügen können.
-    >![Screenshot zeigt den Abfrage-Generator in eDiscovery Premium.](./Media/ediscovery-subgroup-bug.png)
+   - Legen Sie im ersten Feld **Schlüsselwörter gleich** fest, und geben Sie dann `credit card` ein.
+   - Geben Sie im zweiten Feld `debit card` ein.
+   - Geben Sie im dritten Feld `account number` ein.
 
-   - Wählen Sie **Eine Untergruppe hinzufügen**.
-   - Verwenden Sie den Operator **OR**, um nach **Schlüsselwörtern** zu suchen, die **Equal** (gleich) mit `contract` sind.
+   > **Hinweis:** Bedingungen werden als ODER behandelt, wodurch die Suche Elemente zurückgibt, die die Kreditkarten-, Debitkarten- oder Kontonummer enthalten.
 
-    >![Screenshot des Abfrage-Generators in eDiscovery Premium.](./Media/ediscovery-query-builder.png)
+1. Wählen Sie **Abfrage ausführen** aus.
 
-1. Wählen Sie **Weiter** aus.
-1. Wählen Sie auf der Seite **Sammlung prüfen und erstellen** die Option **Senden** und dann **Fertig** auf der Seite **Neue Sammlung erstellt**.
-1. Zurück auf der Seite **Sammlungen**, überprüfen Sie den Fortschritt Ihrer Sammlungsschätzung. Verwenden Sie die Schaltfläche **Aktualisieren**, um die Seite zu aktualisieren und den Status der Sammlungsschätzung zu überprüfen. Sobald der Status Ihrer Schätzung auf **Geschätzt** und der **Vorschaustatus** auf **Erfolgreich** aktualisiert wird, ist Ihre Sammelschätzung abgeschlossen.
+1. Wählen Sie auf der Seite **Suchergebnisse auswählen** die Option **Statistik** aus, und aktivieren Sie dann **Bericht für Abfrageschlüsselwörter einschließen**.
 
-    >![Screenshot der Schaltfläche „Aktualisieren“ und des Bewertungsstatus der Sammlung.](./Media/collection-estimate-status.png)
+1. Wählen Sie **Abfrage ausführen** aus, um die Suche zu starten.
 
-    >**Tipp**: Sobald Sie Ihre Sammlungsschätzung abgeschlossen haben, können Sie mit der Erstellung verschiedener Abfragen oder der Verwendung des KQL-Editors für erweiterte Suchvorgänge experimentieren. Aktivieren Sie dazu das Kontrollkästchen links neben der Sammlungsschätzung und wählen Sie **Sammlung bearbeiten**. So gelangen Sie direkt auf die Seite **Suchanfrage definieren**. Sie können Ihre Abfrage ändern und eine neue Sammlungsschätzung übermitteln, um zu untersuchen, wie Ihre Abfrage Ihre Sammlungsschätzung ändert.
+   > **Hinweis:** Dieser Vorgang kann etwa 5 Minuten dauern, um Ergebnisse zu generieren.
 
-1. Wählen Sie die **Rechtliche Datensammlung** und erkunden Sie die Sammlungsschätzung.
+1. Wenn die Suche abgeschlossen ist, überprüfen Sie Ihre Ergebnisse auf der Registerkarte **Statistik**. Sehen Sie sich die Elementanzahl, Datenvolume und Schlüsselworttreffer an.
 
-   - **Zusammenfassungs-Registerkarte**: Bietet einen Überblick über die Sammlungsstatistiken, einschließlich der abgerufenen Objekte, der Speicherorte mit Treffern und der Dateitypen.
-   - **Datenquellen-Registerkarte**: Zeigt Informationen über verwahrte und nicht verwahrte Datenquellen an, die in der Sammlung enthalten sind.
-   - **Suchstatistiken-Registerkarte**: Zeigt detaillierte Statistiken der letzten Sammlungsschätzung, einschließlich der Anzahl der Objekte und des Datenvolumens.
-   - **Sammlungsoptionen-Registerkarte**: Listet die verschiedenen Optionen auf, die bei der Konfiguration einer Sammlung zur Verfügung stehen, z. B. die Einbeziehung von Cloud-Anhängen und Konversations-Threads.
+1. Wechseln Sie zur Registerkarte **Beispiel**. Wählen Sie **Beispielergebnisse generieren** aus.
 
-    >![Screenshot, der die Registerkarten zeigt, die innerhalb der Schätzung für die Sammlung der gesetzlichen Datensammlung untersucht werden sollen.](./Media/explore-collection-estimate.png)
+1. Lassen Sie auf der Seite **Beispielansicht generieren** die Standardwerte ausgewählt, und wählen Sie dann **Abfrage ausführen** aus.
 
-Sie haben erfolgreich eine Sammlung mit dem Namen _Rechtliche Datensammlung_ erstellt und geprüft.
+   > **Hinweis:** Dieser Vorgang kann etwa 5 Minuten dauern, um Ergebnisse zu generieren.
 
-## Aufgabe 5: Übertragen der Sammlung an einen Prüfdateisatz
+1. Überprüfen Sie nach Abschluss der Abfrage die Ergebnisse.
 
-Sobald die Sammlung zufriedenstellend ist, führen Sie einen Commit an einen Prüfdateisatz zur detaillierten Analyse durch.
+Sie haben die Suche erfolgreich ausgeführt und die Ergebnisse mit den Ansichten „Statistik“ und „Beispiel“ überprüft.
 
-1. Nachdem Sie in der vorherigen Aufgabe die Sammlungsschätzung erstellt haben, sollten Sie sich noch auf der Registerkarte **Sammlungen** des Falls **Rechtsuntersuchung 2024** befinden.  
-1. Wählen Sie die Sammlung **Rechtliche Datensammlung**.
-1. Wählen Sie auf der Flyout-Seite **Rechtliche Datensammlung** auf der rechten Seite **Sammlung übertragen** (Commit ausführen).
-1. Vergewissern Sie sich auf der Seite **Elemente an einen Prüfdateisatz übertragen**, dass die Option **Zu neuem Prüfdateisatz hinzufügen** ausgewählt ist, und geben Sie ihm einen Namen `Legal Case Review`.
-1. Lassen Sie die anderen Standardeinstellungen ausgewählt und wählen Sie **Commit** aus, um die Sammlung in einen Prüfdatensatz zu übertragen.
+## Aufgabe 4: Hinzufügen der Suche zu einem Prüfdateisatz
 
-Sie haben die Sammlung erfolgreich an einen Prüfdateisatz übertragen.
+In dieser Aufgabe committen Sie Ihre Suchergebnisse auf einen Prüfdateisatz, damit diese weiter analysiert werden können.
 
-## Aufgabe 6: Erkunden des Prüfdateisatzes
+1. Wählen Sie auf der Seite **Suche nach der Gefährdung für Zahlungsdaten** die Option **Zu Prüfdateisatz hinzufügen** aus.
 
-1. Nachdem Sie die Sammlung in der vorherigen Aufgabe an einen Prüfdateisatz übertragen haben, sollten Sie sich immer noch auf der Registerkarte **Sammlungen** des Falls **Rechtsuntersuchung 2024** befinden.
-1. Wählen Sie die Registerkarte **Prüfdatensätze** in der oberen Navigation aus und wählen Sie dann den neu erstellten Prüfdatensatz **Rechtsfallprüfung** aus.
-1. Wählen Sie auf der Flyout-Seite **Rechtsfallprüfung** rechts unten auf der Seite **Prüfdatensatz öffnen** aus.
-1. Erfahren Sie, was Sie mit Elementen in Ihrem Prüfdateisatz tun können:
+1. Wählen Sie im Flyout **Zu Prüfdateisatz hinzufügen** die Option **Zu neuem Prüfdateisatz hinzufügen** aus.
 
-   1. **Filter**: Ermöglicht es Ihnen, Bedingungen anzuwenden, um die im Prüfdateisatz angezeigten Elemente einzugrenzen.
-   1. **Tag**: Ermöglicht es Ihnen, Dokumente mit bestimmten Tags zu kennzeichnen, um eine bessere Organisation und Identifizierung zu ermöglichen.
-   1. **Gruppe**: Ermöglicht ihnen das Organisieren von Prüfdateisatzinhalten nach verwandten Elementen wie Familien oder Unterhaltungen.
-   1. **Ansichtsquelle**: Bietet eine umfassende Ansicht des ausgewählten Dokuments, wobei es im ursprünglichen Format angezeigt wird.
-   1. **Nur-Text anzeigen**: Zeigt den extrahierten Text eines Dokuments an, ohne eingebettete Bilder und Formatierungen.
-   1. **Anmerkungen**: Ermöglicht es den Benutzenden, Markups, Schwärzungen und andere Anmerkungen auf das Dokument anzuwenden.
-   1. **Metadaten anzeigen**: Zeigt verschiedene Metadaten an, die mit dem ausgewählten Dokument verbunden sind, um einen detaillierten Einblick zu erhalten.
+   - Geben Sie einen Namen ein: `Payment Data Review Set`.
 
-    >![Screenshot der verfügbaren Optionen für Prüfdateisätze in eDiscovery Premium.](./Media/review-set.png)
+1. Lassen Sie unter **Elemente auswählen, die eingeschlossen werden sollen** die Option **Indizierten Elemente, die Ihrer Suchabfrage entsprechen** ausgewählt.
 
-1. Nachdem Sie Ihren Prüfdateisatz untersucht haben, können Sie Elemente zur weiteren Analyse exportieren.
+1. Wählen Sie unter **Elemente in Listen und Anlagen auswählen** die Option **Anlagen auflisten**, damit angefügte Dateien im Prüfdateisatz enthalten sind.
 
-Sie haben Ihren Prüfdateisatz erfolgreich geöffnet und überprüft.
+1. Behalten Sie für alle weiteren Optionen die Standardeinstellungen bei, und wählen Sie dann **Zu Prüfdateisatz hinzufügen** aus.
 
-## Aufgabe 7 – Exportieren der Suchergebnisse
+   > **Hinweis:** Dieser Vorgang kann etwa 5 Minuten dauern, um Ergebnisse zu generieren.
 
-Um Ihre Arbeit zu speichern und weitere Analysen zu ermöglichen, exportieren Sie die Suchergebnisse.
+Sie haben den **Zahlungsdatenprüfsatz** erfolgreich erstellt und ihre Suchergebnisse hinzugefügt.
 
-1. Sie sollten sich immer noch im Prüfdateisatz **Rechtsfallprüfung** in eDiscovery (Premium) befinden.
-1. Aktivieren Sie das Kontrollkästchen neben den Elementen, die Sie zur weiteren Analyse exportieren möchten.
-1. Wählen Sie das Dropdown-Menü für **Aktionen** > **Exportieren** aus.
+## Aufgaben 5: Überprüfen und Kategorisieren von Elementen
 
-    >![Screenshot der Option zum Exportieren eines Prüfdateisatzes in eDiscovery Premium.](./Media/export-review-set.png)
+Bei dieser Aufgabe filtern Sie Prüfdateisatzelemente und wenden Tags an, um sie für die Untersuchung zu organisieren.
 
-1. Geben Sie auf der Flyout-Seite **Exportoptionen** auf der rechten Seite Folgendes ein:
+1. Wählen Sie auf der Seite **Zahlungsdatenprüfsatz** die Option **Abfrage** aus, und konfigurieren Sie Folgendes:
 
-   - **Exportname**: `LegalCaseExport_July2024`
-   - **Beschreibung:** `Export of relevant emails and documents for the July 2024 legal case investigation.`
-   - **Diese Dokumente exportieren**: Nur ausgewählte Dokumente
-   - **Auswahl erweitern**: Nein
-   - **Ausgabeoptionen**: Komprimierte Verzeichnisstruktur
+   - Erste Dropdownliste: **Schlüsselwörter**
+   - Operator: **Gleich beliebige von**
+   - Schlüsselwörter eingeben:
 
-1. Wählen Sie die Schaltfläche **Exportieren** am unteren Rand der Flyout-Seite.
+     - `Visa`
+     - `Master Card`
+   - Wählen Sie **+ Bedingungen hinzufügen** aus.
+   - Bedingung hinzufügen:
 
-    >![Screenshot der Konfigurationsoptionen zum Exportieren eines Prüfdateisatzes.](./Media/export-options-review-set.png)
+     - Feld: **Dateiklasse**
+     - Operator: **Gleich beliebige von**
+     - Wert: `Document`
+   - Wählen Sie **Abfrage ausführen** aus.
 
-1. Sie sollten eine Benachrichtigung erhalten, die besagt, dass **ein Auftrag erstellt** wurde, um Ihren Prüfdateisatz zu exportieren. Wählen Sie in dieser Benachrichtigung **OK** aus.
-1. Um auf Ihren exportierten Prüfdateisatz zuzugreifen, erweitern Sie im linken Navigationsbereich **Premium-Fälle** und wählen Sie dann **Fälle** aus. Wählen Sie den Fall **Rechtsuntersuchung 2024** und dann die Registerkarte **Exporte** in der oberen Navigation.
-1. Wählen Sie den Export **LegalCaseExport_July2024** aus.
-1. Aktivieren Sie auf der Flyout-Seite **LegalCaseExport_July2024** auf der rechten Seite das Kontrollkästchen links neben jeder exportierten Datei und wählen Sie **Herunterladen**. Dadurch werden eine .csv-Zusammenfassung und eine Zip-Datei mit den exportierten Artikeln heruntergeladen.
+1. Wählen Sie **Speichern** aus, um diese Suchabfrage zu speichern. Geben Sie im Feld „Filtername“ `Payment data docs` ein.
 
-    >**Tipp**: Möglicherweise müssen Sie den Popupblocker deaktivieren, um exportierte Dateien erfolgreich herunterzuladen.
+1. Wählen Sie auf der Befehlsleiste **Tagdateien** aus.
 
-Sie haben die Suchergebnisse für die Überprüfung erfolgreich exportiert.
+1. Wählen Sie im Flyout **Tagdateien** die Option **Tags erstellen/bearbeiten** aus.
+
+1. Konfigurieren Sie auf der Seite **Tags verwalten** Folgendes:
+
+   - **Taggruppenname**: `Relevance`
+
+     - **Tagname**: `Relevant`
+     - Wählen Sie **Tag hinzufügen** aus, und fügen Sie dann `Not relevant` hinzu.
+   - Wählen Sie **Taggruppe hinzufügen** aus.
+   - **Taggruppenname**: `Review status`
+     - **Tagname**: `Needs redaction`
+
+1. Wählen Sie **Speichern** und dann **Schließen** aus.
+
+1. Markieren Sie im Flyout **Tagdateien** das erste Element als **Relevant** und das zweite Element als **Nicht relevant**.
+
+1. Suchen Sie im Prüfdateisatz nach **Contoso Purchasing Permissions - Q1.docx** von **Irvin S** vom **2. August 2019**.
+
+1. Wählen Sie das Element aus, und markieren Sie es als **Benötigt Bearbeitung**.
+
+1. Wählen Sie **Schließen** aus, um das Flyout **Tagdateien** zu schließen.
+
+Sie haben relevante und nicht relevante Dokumente sowie Dokumente erfolgreich markiert, die eine Bearbeitung benötigen.
+
+## Aufgabe 6: Anwenden von Bearbeitungen
+
+Bei dieser Aufgabe maskieren Sie vertrauliche Informationen aus einem Dokument in Ihrem Prüfdateisatz.
+
+1. Wählen Sie im **Zahlungsdatenprüfsatz** das Element **Contoso Purchasing Permissions - Q1.docx** von **Irvin S** am **2. August 2019** aus, um den Dokument-Viewer zu öffnen.
+
+1. Wählen Sie auf der Symbolleiste des Viewers die Option **Kommentieren** aus.
+
+1. Wählen Sie in den Anmerkungstools die Dropdownliste für **Zeichnung** aus, und wählen Sie dann **Bereichsbearbeitung** aus.
+
+    >![Screenshot: Auswählen der Bereichsbearbeitung](./Media/area-redaction.png)
+
+1. Zeichnen Sie mit dem Cursor ein Feld um die vertraulichen Informationen in der Datei, z. B.:
+
+   - Visa-Kartennummer
+   - MasterCard-Nummer
+   - Bankkontonummer
+
+1. Wiederholen Sie diesen Vorgang nach Bedarf, bis alle vertraulichen Daten abgedeckt sind.
+
+1. Schließen Sie den Dokument-Viewer.
+
+1. Wählen Sie wieder auf der Seite **Zahlungsdatenprüfsatz** mit der ausgewählten Datei **Contoso Purchasing Permissions - Q1.docx** die Option **Aktionen** > **Bearbeitungen an PDF committen** aus.
+
+   > **Hinweis:** Beim Committen von Bearbeitungen wird eine bearbeitete PDF-Datei im Prüfdateisatz gespeichert, während die Originaldatei unverändert bleibt.
+
+Sie haben Bearbeitungen erfolgreich angewendet und an eine bearbeitete PDF-Kopie committet.
+
+## Vorgang 7: Exportieren von Ergebnissen
+
+Bei dieser Aufgabe exportieren Sie die bearbeiteten und markierten Elemente aus Ihrem Prüfdateisatz für die Produktion.
+
+1. Aktivieren Sie im **Zahlungsdatenprüfsatz** die Kontrollkästchen neben den zu exportierenden Elementen.
+
+   > Stellen Sie sicher, dass das durch Sie bearbeitete Dokument **Contoso Purchasing Permissions - Q1.docx** eingeschlossen ist.
+
+1. Wählen Sie auf der Befehlsleiste **Aktionen** > **Exportieren** aus.
+
+1. Konfigurieren Sie im Flyout **Exportieren** Folgendes:
+
+   - **Exportname**: `PaymentData_Export_2025`
+   - **Beschreibung:** `Export of review set items with redacted versions for Payment Data Leak Investigation.`
+
+1. Unter **Elemente auswählen, die in den Export eingeschlossen werden sollen**:
+
+   - Wählen Sie **Nur ausgewählten Dokumente** aus.
+   - Lassen Sie **Ausgewählte Dokumente erweitern, um Folgendes einzuschließen > Zugeordnete Familienelemente** aktiviert. Dadurch wird sichergestellt, dass Anlagen eingeschlossen sind.
+
+1. Wählen Sie unter **Exporttyp** die Option **Elemente mit Elementbericht exportieren** aus.
+
+   - Aktivieren Sie das Kontrollkästchen **Bearbeitung exportieren**, um die bearbeiteten PDF-Dateien einzuschließen, und das Kontrollkästchen **Tags exportieren**, um Taginformationen einzuschließen.
+
+1. Wählen Sie unter **Exportformat** die Option **MSG-Dateien für Nachrichten erstellen** aus, und lassen Sie alle weiteren Standardwerte ausgewählt.
+
+1. Wählen Sie **Exportieren** aus.
+
+1. Wählen Sie den **Prozess-Manager** aus, um den Status des Exports anzuzeigen.
+
+1. Wählen Sie im Prozess-Manager **Aktualisieren** aus, bis der Exportstatus **Abgeschlossen** lautet.
+
+1. Sobald der Status **Abgeschlossen** lautet, wählen Sie die Zeile für den Export aus.
+
+1. Wählen Sie im Flyout **Exportieren** alle Dateien unter **Pakete exportieren** und dann **Herunterladen** aus.
+
+1. Wählen Sie einen Speicherort aus, um Ihre Exporte herunterzuladen, und navigieren Sie dann zum Speicherort der heruntergeladenen Exporte.
+
+1. Untersuchen Sie die Elemente Ihrer ZIP-Datei.
+
+Sie haben einen Fall erstellt, nach vertraulichen Daten gesucht, einem Prüfdateisatz Elemente hinzugefügt, Tags und Bearbeitungen angewendet und die bearbeiteten Ergebnisse exportiert. Das sind die wichtigsten Schritte bei der Durchführung einer Untersuchung mit Microsoft Purview-eDiscovery.
